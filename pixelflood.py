@@ -13,7 +13,7 @@ cores = int(sys.argv[1])
 iterations = int(sys.argv[2])
 path = "temp"
 
-buffer = open(path, 'r').read().encode()
+buffer = open(path, 'r').read()
 
 def send():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -28,7 +28,7 @@ tmp_buffer = ''
 while len(tmp_buffer) < 50 * 10**6:
     tmp_buffer += buffer
 
-buffer = tmp_buffer
+buffer = tmp_buffer.encode()
 
 with Pool(cores) as pool:
     while True:
