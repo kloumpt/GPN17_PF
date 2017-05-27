@@ -7,11 +7,13 @@ import os
 from PIL import Image
 import threading
 
+import numpy as np
+
 MAXH = 1920
 MAXW = 1200
 xoffset = int(sys.argv[2])
 yoffset = int(sys.argv[3])
-iterations = 2
+iterations = 10
 path = "temp"
 
 def pixel(myfile, x, y, r, g, b, a=255):

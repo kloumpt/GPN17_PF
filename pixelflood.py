@@ -24,5 +24,5 @@ from multiprocessing import Pool
 
 with Pool(cores) as pool:
     while True:
-        pool.apply_async(send)
+        send()#pool.apply_async(send)
 
