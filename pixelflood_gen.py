@@ -39,7 +39,7 @@ def calculate(xoffset, yoffset, image, w, h, i=0):
 
         for x in range(w):
             for y in range(h):
-                buffer += gen(mask, x, MAXW - y - 1, xoffset, yoffset, i)
+                buffer += gen(mask, x, h - y - 1, xoffset, yoffset, i)
 
         myfile.write(buffer)
 
