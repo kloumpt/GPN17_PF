@@ -17,7 +17,9 @@ iterations = int(sys.argv[4])
 path = "temp"
 
 def pixel(x, y, r, g, b, a=255):
+	#r, g, b, a = 0, 0, 0, 255
         if a == 255:
+            return ('PX %d %d \n' % (x, y))
             return ('PX %d %d %02x%02x%02x\n' % (x, y, r, g, b))
         elif a > 0:
             return ('PX %d %d %02x%02x%02x%02x\n' % (x, y, r, g, b, a))
