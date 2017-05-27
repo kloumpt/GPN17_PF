@@ -1,11 +1,11 @@
 #!/bin/bash
-while [[ 1 ]]; do
 
 git fetch
 if [[ $(git diff --name-only HEAD origin/master) != "" ]]; then
-    ./auto_script.sh    
+    ./auto_script.sh&
     git fetch
     echo 'change'
 fi
-done
 
+sleep 1
+./git-notify
