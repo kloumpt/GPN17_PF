@@ -47,10 +47,9 @@ for i in range(iterations):
     calculate(xoffset, yoffset, image, w, h)
 
 
-from concurrent.futures import ThreadPoolExecutor
+from multiprocessing import Pool
 
-with ThreadPoolExecutor(cores) as pool:
+with Pool(cores) as pool:
     while True:
-        pool.submit(send)
-
+        pool.apply_async(send)
 
