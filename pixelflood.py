@@ -20,7 +20,10 @@ def send():
     sock.connect((HOST,PORT))
     while True:
         #mask = iter(np.random.randint(0, 100, buffer.len()))
-        sock.send(buffer)
+        try:
+            sock.send(buffer)
+        except Exception:
+            return
 
 from concurrent.futures import ThreadPoolExecutor as Pool
 
