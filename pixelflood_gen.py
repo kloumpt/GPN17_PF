@@ -36,7 +36,10 @@ def calculate(xoffset, yoffset, image, w, h, i=0):
     with open(path, "a") as myfile:
         buffer=''
         mask = np.random.randint(0, 100, (w, h))
-        buffer = ''.join([''.join([gen(mask, x, y, xoffset, yoffset, i) for x in range(w)]) for y in range(h)])
+        
+        for x in range(w):
+            for y in range(h):
+                buffer += gen(mask, x, y, xoffset, yoffset, i)
         myfile.write(buffer)
 
 image = Image.open(sys.argv[1]).convert('RGBA')
