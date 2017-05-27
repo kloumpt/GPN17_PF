@@ -16,14 +16,15 @@ path = "temp"
 buffer = open(path, 'r').read()
 
 def send():
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect((HOST,PORT))
     while True:
-        #mask = iter(np.random.randint(0, 100, buffer.len()))
-        try:
-            sock.send(buffer)
-        except Exception:
-            return
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.connect((HOST,PORT))
+        while True:
+            #mask = iter(np.random.randint(0, 100, buffer.len()))
+            try:
+                sock.send(buffer)
+            except Exception:
+                return
 
 from concurrent.futures import ThreadPoolExecutor as Pool
 
