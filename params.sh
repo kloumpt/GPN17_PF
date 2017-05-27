@@ -1,5 +1,5 @@
 #!/bin/bash
-image="cfg.png"
+image="cfg.jpg"
 xoffset=0
 yoffset=0
 
