@@ -8,16 +8,16 @@ kill_childs() {
 
 trap 'kill_childs' SIGINT SIGTERM
 
-image_load="$1"
-xoffset="$2"
-yoffset="$3"
 
-cores=128
+cores=16
 for i in `seq 1 $cores`; do
-    nohup python3 pixelflood.py "$image_load" $xoffset $yoffset 16&
+    python3 pixelflood.py  16&
 done
 
-while 1;do;done
+while [[ 1 -eq 1 ]]
+do
+    sleep 1
+done
 
 
 
