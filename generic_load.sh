@@ -6,10 +6,13 @@ kill_childs() {
 
 trap 'kill_childs' SIGINT SIGTERM
 
+image_load="$1"
+xoffset="$2"
+yoffset="$3"
 
 cores=64
 for i in `seq 1 $cores`; do
-    nohup python3 pixelflood.py black.png 1000 0 16&
+    nohup python3 pixelflood.py "$image_load" 1000 0 16&
 done
 
 echo $!
