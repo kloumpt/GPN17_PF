@@ -10,6 +10,7 @@ import threading
 HOST = '94.45.231.39'
 PORT = 1234
 cores = int(sys.argv[1])
+iterations = int(sys.argv[2])
 path = "temp"
 
 buffer = open(path, 'r').read().encode()
@@ -17,7 +18,8 @@ buffer = open(path, 'r').read().encode()
 def send():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.connect((HOST,PORT))
-    sock.send(buffer)
+    for i in range(iterations):
+        sock.send(buffer)
 
 
 from concurrent.futures import ThreadPoolExecutor as Pool
