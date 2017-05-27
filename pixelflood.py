@@ -20,9 +20,9 @@ def send():
     sock.send(buffer)
 
 
-from multiprocessing import Pool
+from concurrent.futures import ThreadPoolExecutor as Pool
 
 with Pool(cores) as pool:
     while True:
-        send()#pool.apply_async(send)
+        pool.submit(send)
 

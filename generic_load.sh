@@ -9,9 +9,9 @@ kill_childs() {
 trap 'kill_childs' SIGINT SIGTERM
 
 
-cores=1024
+cores=1
 for i in `seq 1 $cores`; do
-    python3 pixelflood.py  2&
+    python3 pixelflood.py  2048&
 done
 
 while [[ 1 -eq 1 ]]
