@@ -18,9 +18,9 @@ buffer = open(path, 'r').read().encode()
 def send():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.connect((HOST,PORT))
-    for i in range(iterations):
+    while True:
+        #mask = iter(np.random.randint(0, 100, buffer.len()))
         sock.send(buffer)
-
 
 from concurrent.futures import ThreadPoolExecutor as Pool
 
