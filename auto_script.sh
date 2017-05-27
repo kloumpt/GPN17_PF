@@ -11,5 +11,7 @@ source params.sh
 
 python3 pixelflood_gen.py "$image" "$xoffset" "$yoffset" 1
 killall python3
+
+echo 'starting the flood'
 python3 pixelflood.py "$threads"
 
