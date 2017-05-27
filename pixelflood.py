@@ -10,7 +10,6 @@ import threading
 HOST = '94.45.231.39'
 PORT = 1234
 cores = int(sys.argv[1])
-iterations = int(sys.argv[2])
 path = "temp"
 
 buffer = open(path, 'r').read()
