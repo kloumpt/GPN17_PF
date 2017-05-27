@@ -3,6 +3,6 @@ image="cfg.png"
 xoffset=0
 yoffset=0
 
-threads=2048
+threads=8000
 
 
