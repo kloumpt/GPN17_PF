@@ -1,5 +1,5 @@
 #!/bin/bash
-image="bitteschone.jpg"
+image="cfg.png"
 xoffset=0
 yoffset=0
 
