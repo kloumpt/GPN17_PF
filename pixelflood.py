@@ -13,6 +13,7 @@ MAXH = 1920
 MAXW = 1200
 xoffset = int(sys.argv[2])
 yoffset = int(sys.argv[3])
+cores = int(sys.argv[4])
 threads = []
 iterations = 24
 path = "temp"
@@ -48,7 +49,7 @@ for i in range(iterations):
 
 from concurrent.futures import ThreadPoolExecutor
 
-with ThreadPoolExecutor(16) as pool:
+with ThreadPoolExecutor(cores) as pool:
     while True:
         pool.submit(send)
 
