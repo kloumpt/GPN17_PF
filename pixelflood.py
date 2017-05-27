@@ -15,7 +15,7 @@ xoffset = int(sys.argv[2])
 yoffset = int(sys.argv[3])
 cores = int(sys.argv[4])
 threads = []
-iterations = 24
+iterations = 240
 path = "temp"
 
 def pixel(myfile, x, y, r, g, b, a=255):
