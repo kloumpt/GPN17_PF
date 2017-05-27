@@ -13,7 +13,7 @@ MAXH = 1920
 MAXW = 1200
 xoffset = int(sys.argv[2])
 yoffset = int(sys.argv[3])
-iterations = 10
+iterations = int(sys.argv[4])
 path = "temp"
 
 def pixel(myfile, x, y, r, g, b, a=255):
@@ -22,12 +22,15 @@ def pixel(myfile, x, y, r, g, b, a=255):
         elif a > 0:
             return ('PX %d %d %02x%02x%02x%02x\n' % (x, y, r, g, b, a))
 
-def calculate(xoffset, yoffset, image, w, h):
+def calculate(xoffset, yoffset, image, w, h, i=0):
     with open(path, "a") as myfile:
         buffer=''
+        mask = np.random.randint(0, 100, (w, h))
         for x in range(w):
             for y in range(h):
-                print(x, '/', w, y, '/', h)
+                if mask[x, y] > 10:
+                    continue
+                print(i, ':', x, '/', w, y, '/', h)
                 r, g, b, a = image.getpixel((x, y))
                 buffer += pixel(myfile, x + xoffset, y + yoffset, r, g, b, a)
         myfile.write(buffer)
@@ -39,6 +42,6 @@ if os.path.isfile(path):
 
 _, _, w, h = image.getbbox()
 for i in range(iterations):
-    calculate(xoffset, yoffset, image, w, h)
+    calculate(xoffset, yoffset, image, w, h, i=i)
 
 
