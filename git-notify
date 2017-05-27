@@ -38,7 +38,7 @@ while [ 1 ]; do
         # notify the user of the commit.
         summary="$commit_name committed to $repository $commit_when!"
         body="$commit_summary\n\n$commit_body"
-        `$command`
+        `$command&`
     fi
     sleep 1
 done
