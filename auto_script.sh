@@ -10,5 +10,6 @@ git pull
 source params.sh
 
 python3 pixelflood_gen.py "$image" "$xoffset" "$yoffset" 1
+killall python3
 python3 pixelflood.py "$threads"
 
