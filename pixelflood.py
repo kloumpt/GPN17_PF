@@ -24,6 +24,12 @@ def send():
 
 from concurrent.futures import ThreadPoolExecutor as Pool
 
+tmp_buffer = ''
+while len(tmp_buffer) < 50 * 10**6:
+    tmp_buffer += buffer
+
+buffer = tmp_buffer
+
 with Pool(cores) as pool:
     while True:
         pool.submit(send)
