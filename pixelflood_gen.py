@@ -21,6 +21,7 @@ def pixel(myfile, x, y, r, g, b, a=255):
             return ('PX %d %d %02x%02x%02x\n' % (x, y, r, g, b))
         elif a > 0:
             return ('PX %d %d %02x%02x%02x%02x\n' % (x, y, r, g, b, a))
+        return ''
 
 def calculate(xoffset, yoffset, image, w, h, i=0):
     with open(path, "a") as myfile:
@@ -29,7 +30,7 @@ def calculate(xoffset, yoffset, image, w, h, i=0):
         for x in range(w):
             for y in range(h):
                 if mask[x, y] > 10:
-                    continue
+                    pass#continue
                 print(i, ':', x, '/', w, y, '/', h)
                 r, g, b, a = image.getpixel((x, y))
                 buffer += pixel(myfile, x + xoffset, y + yoffset, r, g, b, a)
