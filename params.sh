@@ -1,5 +1,5 @@
 #!/bin/bash
-image="macron.jpg"
+image="melenchon.jpg"
 xoffset=0
 yoffset=0
 
