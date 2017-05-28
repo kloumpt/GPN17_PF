@@ -3,6 +3,6 @@ image="melenchon.jpg"
 xoffset=0
 yoffset=0
 
-threads=8000
+threads=2048
 
 
